@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreMedicationAdministrartionCategory",
+  "id": "il-core-medication-administrartion-category",
+  "title": "ILCore Medication administrartion Category",
+  "description": "Codes for Medication administrartion Category",
+  "url": "http://fhir.health.gov.il/ValueSet/il-core-medication-administration-category",
+  "version": "0.11.0",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://fhir.health.gov.il/cs/il-core-medicationrequest-category",
+        "concept": [
+          {
+            "code": "inpatient",
+            "display": "Inpatient"
+          },
+          {
+            "code": "outpatient",
+            "display": "Outpatient"
+          },
+          {
+            "code": "community-hmo",
+            "display": "Community Care/HMO"
+          },
+          {
+            "code": "community-other",
+            "display": "Community Care/Long Term Care/Home"
+          },
+          {
+            "code": "leave",
+            "display": "Leave"
+          }
+        ]
+      }
+    ]
+  }
+}

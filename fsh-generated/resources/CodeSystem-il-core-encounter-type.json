@@ -1,0 +1,30 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ILCoreEncounterType",
+  "id": "il-core-encounter-type",
+  "title": "IL Core Encounter Type codes",
+  "description": "A list of codes for types of encounters",
+  "url": "http://fhir.health.gov.il/cs/il-core-encounter-type",
+  "concept": [
+    {
+      "code": "COMMUNITY-OR-HMO",
+      "display": "Community Care/HMO setting"
+    },
+    {
+      "code": "RALTCF",
+      "display": "Residential Aged Care/Long Term Care Facility"
+    }
+  ],
+  "version": "0.11.0",
+  "caseSensitive": false,
+  "experimental": false,
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/codesystem-effectiveDate",
+      "valueDate": "2023-01"
+    }
+  ],
+  "count": 2
+}

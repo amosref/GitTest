@@ -1,0 +1,21 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ILCoreMedicationCourseOfTherapyType",
+  "id": "il-core-medication-course-of-therapy-type",
+  "title": "Codes for Medication Course of therpy types",
+  "description": "A list of codes for Medication Course of therpy types",
+  "url": "http://fhir.health.gov.il/cs/il-core-medication-course-of-therapy-type",
+  "concept": [
+    {
+      "code": "sos",
+      "display": "SOS",
+      "definition": "A medication which is expected to be used on-demand when needed in emergency (e.g. opioid medication, laxative medication)"
+    }
+  ],
+  "version": "0.11.0",
+  "caseSensitive": false,
+  "experimental": false,
+  "count": 1
+}

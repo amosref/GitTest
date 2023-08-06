@@ -1,0 +1,241 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-medication-statement",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-medication-statement",
+  "version": "0.11.0",
+  "name": "ILCoreMedicationStatement",
+  "title": "ILCore MedicationStatement Profile",
+  "status": "draft",
+  "date": "2023-05-18",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the MedicationStatement Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationStatement",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationStatement",
+        "path": "MedicationStatement",
+        "short": "ILCore MedicationStatement Profile",
+        "definition": "Definitions for the profile-MedicationStatement resource profile."
+      },
+      {
+        "id": "MedicationStatement.extension",
+        "path": "MedicationStatement.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationStatement.extension:courseOfTherapyType",
+        "path": "MedicationStatement.extension",
+        "sliceName": "courseOfTherapyType",
+        "short": "Ext: Medication Course-Of-Therapy Type",
+        "definition": "Extension: A coded representation of the type of course-of-therapy",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-medication-course-of-therapy-type"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.basedOn",
+        "path": "MedicationStatement.basedOn",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/CarePlan",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-medication-request",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-service-request"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.partOf",
+        "path": "MedicationStatement.partOf",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-medication-administration",
+              "http://hl7.org/fhir/StructureDefinition/MedicationDispense",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-medication-statement",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-procedure",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-observation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.status",
+        "path": "MedicationStatement.status",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.category",
+        "path": "MedicationStatement.category",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-medication-statement-category"
+        }
+      },
+      {
+        "id": "MedicationStatement.medication[x]",
+        "path": "MedicationStatement.medication[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-medication-statement-code"
+        }
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationReference",
+        "path": "MedicationStatement.medication[x]",
+        "sliceName": "medicationReference",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.subject",
+        "path": "MedicationStatement.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-group"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.context",
+        "path": "MedicationStatement.context",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-encounter",
+              "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dateAsserted",
+        "path": "MedicationStatement.dateAsserted",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.informationSource",
+        "path": "MedicationStatement.informationSource",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.reasonCode",
+        "path": "MedicationStatement.reasonCode",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-procedure-reason"
+        }
+      },
+      {
+        "id": "MedicationStatement.reasonReference",
+        "path": "MedicationStatement.reasonReference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-condition",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-observation",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-diagnostic-report"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage",
+        "path": "MedicationStatement.dosage",
+        "type": [
+          {
+            "code": "Dosage",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-dosage"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

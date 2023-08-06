@@ -1,0 +1,51 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ILCoreMedicationCategory",
+  "id": "il-core-medication-category",
+  "title": "Codes for MedicationRequest categories",
+  "description": "A list of codes for MedicationRequest categories",
+  "url": "http://fhir.health.gov.il/cs/il-core-medicationrequest-category",
+  "concept": [
+    {
+      "code": "inpatient",
+      "display": "Inpatient",
+      "definition": "Includes medications to be administered or consumed in an inpatient or acute care setting."
+    },
+    {
+      "code": "outpatient",
+      "display": "Outpatient",
+      "definition": "Includes medications to be administered or consumed  in an outpatient setting or ambulatory setting ( for example Hospital outpatient clinics setting, Urgent care settings (e.g. health organization urgent care center, Outpatient Surgery center"
+    },
+    {
+      "code": "community-hmo",
+      "display": "Community Care/HMO",
+      "definition": "Includes medications to be administered or consumed  in HMOs (this would include HMO clinics, doctor offices, ect.)"
+    },
+    {
+      "code": "community-other",
+      "display": "Community Care/Long Term Care/Home",
+      "definition": "Includes medications to be administered or consumed  in community care settings  (this would include long term care or nursing homes, hospices,  patient’s home etc.)."
+    },
+    {
+      "code": "discharge",
+      "display": "Discharge",
+      "definition": "Includes  medications when the patient is being released from a facility."
+    },
+    {
+      "code": "patientspecified",
+      "display": "Patient Specified",
+      "definition": "Includes statements about medication use, including over the counter medication, provided by the patient, agent or another provider"
+    },
+    {
+      "code": "leave",
+      "display": "Leave",
+      "definition": "Includes medications that the patient will take during any short break from inpatient care (this would include administrations dispensed by the hospital pharmacy to be self-administered at home with or without the assistance of community-based nursing staff)."
+    }
+  ],
+  "version": "0.11.0",
+  "caseSensitive": false,
+  "experimental": false,
+  "count": 7
+}

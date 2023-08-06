@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreMedicationCourseOfTherapyType",
+  "id": "il-core-medication-course-of-therapy-type",
+  "title": "ILCore Medication Course Of Therapy ",
+  "description": "Codes for Medication Course Of Therapy",
+  "url": "http://fhir.health.gov.il/ValueSet/il-core-medication-course-of-therapy-type",
+  "version": "0.11.0",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+        "concept": [
+          {
+            "code": "continuous",
+            "display": "Continuous long term therapy"
+          },
+          {
+            "code": "acute",
+            "display": "Short course (acute) therapy"
+          }
+        ]
+      },
+      {
+        "system": "http://fhir.health.gov.il/cs/il-core-medication-course-of-therapy-type"
+      }
+    ]
+  }
+}

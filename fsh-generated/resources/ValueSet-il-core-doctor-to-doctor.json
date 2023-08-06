@@ -1,0 +1,24 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreDoctorToDoctor",
+  "id": "il-core-doctor-to-doctor",
+  "title": "IL Core Doctor To Doctor Codes",
+  "description": "Codes for Doctor To Doctor encounter for the IL Core",
+  "url": "http://fhir.health.gov.il/ValueSet/il-core-doctor-to-doctor",
+  "version": "0.11.0",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1268903003",
+            "display": "Consultation by multidisciplinary team (procedure)"
+          }
+        ]
+      }
+    ]
+  }
+}

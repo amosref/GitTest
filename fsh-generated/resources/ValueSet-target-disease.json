@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "TargetDisease",
+  "id": "target-disease",
+  "title": "Target Disease Codes",
+  "description": "SNOMED based valueset of all Disease caused by microorganism or bacterial toxin",
+  "url": "http://fhir.health.gov.il/ValueSet/target-disease",
+  "version": "0.11.0",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "descendent-of",
+            "value": "87628006"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "descendent-of",
+            "value": "34014006"
+          }
+        ]
+      }
+    ]
+  }
+}

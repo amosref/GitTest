@@ -1,0 +1,387 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-medication-request",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-medication-request",
+  "version": "0.11.0",
+  "name": "ILCoreMedicationRequest",
+  "title": "ILCore MedicationRequest Profile",
+  "status": "draft",
+  "date": "2021-05-02",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the MedicationRequest  Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "script10.6",
+      "uri": "http://ncpdp.org/SCRIPT10_6",
+      "name": "Mapping to NCPDP SCRIPT 10.6"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationRequest",
+        "path": "MedicationRequest",
+        "short": "ILCore MedicationRequest  Profile",
+        "definition": "Definitions for the profile-MedicationRequest  resource profile."
+      },
+      {
+        "id": "MedicationRequest.extension",
+        "path": "MedicationRequest.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationRequest.extension:recorded",
+        "path": "MedicationRequest.extension",
+        "sliceName": "recorded",
+        "short": "Ext: Recorded Time",
+        "definition": "Extension: The time in whitch an event was recorded",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-recorded-time"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.extension:narcotic",
+        "path": "MedicationRequest.extension",
+        "sliceName": "narcotic",
+        "short": "Ext: Narcotic Medication",
+        "definition": "Extension: Noting if a medication is narcotic or not",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-narcotic-medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.status",
+        "path": "MedicationRequest.status",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.intent",
+        "path": "MedicationRequest.intent",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.category",
+        "path": "MedicationRequest.category",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationRequest.category:il-core",
+        "path": "MedicationRequest.category",
+        "sliceName": "il-core",
+        "min": 0,
+        "max": "*",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-medication-request-category"
+        }
+      },
+      {
+        "id": "MedicationRequest.reported[x]",
+        "path": "MedicationRequest.reported[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationRequest.reported[x]:reportedReference",
+        "path": "MedicationRequest.reported[x]",
+        "sliceName": "reportedReference",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.medication[x]",
+        "path": "MedicationRequest.medication[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-medication-code"
+        }
+      },
+      {
+        "id": "MedicationRequest.medication[x]:medicationReference",
+        "path": "MedicationRequest.medication[x]",
+        "sliceName": "medicationReference",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.subject",
+        "path": "MedicationRequest.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-group"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.encounter",
+        "path": "MedicationRequest.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-encounter"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.supportingInformation",
+        "path": "MedicationRequest.supportingInformation",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "$this.resolve()"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationRequest.supportingInformation:bodyWeight",
+        "path": "MedicationRequest.supportingInformation",
+        "sliceName": "bodyWeight",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/bodyweight"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.authoredOn",
+        "path": "MedicationRequest.authoredOn",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.requester",
+        "path": "MedicationRequest.requester",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-device"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.performer",
+        "path": "MedicationRequest.performer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-care-team",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.recorder",
+        "path": "MedicationRequest.recorder",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.reasonCode",
+        "path": "MedicationRequest.reasonCode",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-procedure-reason"
+        }
+      },
+      {
+        "id": "MedicationRequest.reasonReference",
+        "path": "MedicationRequest.reasonReference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-condition",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-observation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.reasonReference.extension:procedureReference",
+        "path": "MedicationRequest.reasonReference.extension",
+        "sliceName": "procedureReference",
+        "short": "Ext: ILCore Procedure Reference",
+        "definition": "Extension: Procedure Reference",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-procedure-reference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.basedOn",
+        "path": "MedicationRequest.basedOn",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/CarePlan",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-medication-request",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-service-request",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-immunization-recommendation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.courseOfTherapyType",
+        "path": "MedicationRequest.courseOfTherapyType",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-medication-course-of-therapy-type"
+        }
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction",
+        "path": "MedicationRequest.dosageInstruction",
+        "type": [
+          {
+            "code": "Dosage",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-dosage"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

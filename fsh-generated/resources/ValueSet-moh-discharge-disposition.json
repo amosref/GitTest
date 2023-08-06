@@ -1,0 +1,11 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "MoHDischargeDisposition",
+  "id": "moh-discharge-disposition",
+  "title": "MoH Discharge Disposition Codes",
+  "description": "Codes for Discharge Disposition according to MoH catalogue",
+  "url": "http://fhir.health.gov.il/ValueSet/moh-discharge-disposition",
+  "version": "0.11.0",
+  "experimental": false
+}

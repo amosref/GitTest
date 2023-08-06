@@ -1,0 +1,18 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "MoHReasonCodes",
+  "id": "moh-reason-codes",
+  "title": "MoH Reason Codes",
+  "description": "Reason Codes according to MoH catalogue",
+  "url": "http://fhir.health.gov.il/ValueSet/moh-reason-codes",
+  "version": "0.11.0",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://fhir.health.gov.il/ValueSet/moh-reason-codes"
+      }
+    ]
+  }
+}

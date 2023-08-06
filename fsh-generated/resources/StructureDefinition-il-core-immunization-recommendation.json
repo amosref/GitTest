@@ -1,0 +1,87 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-immunization-recommendation",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-immunization-recommendation",
+  "version": "0.11.0",
+  "name": "ILCoreImmunizationRecommendation",
+  "title": "ILCore ImmunizationRecommendation Profile",
+  "status": "draft",
+  "date": "2023-05-22",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the ImmunizationRecommendation Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "ImmunizationRecommendation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ImmunizationRecommendation",
+        "path": "ImmunizationRecommendation",
+        "short": "ILCore ImmunizationRecommendation Profile",
+        "definition": "Definitions for the profile-ImmunizationRecommendation resource profile."
+      },
+      {
+        "id": "ImmunizationRecommendation.patient",
+        "path": "ImmunizationRecommendation.patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImmunizationRecommendation.authority",
+        "path": "ImmunizationRecommendation.authority",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImmunizationRecommendation.recommendation.supportingImmunization",
+        "path": "ImmunizationRecommendation.recommendation.supportingImmunization",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-immunization",
+              "http://hl7.org/fhir/StructureDefinition/ImmunizationEvaluation"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

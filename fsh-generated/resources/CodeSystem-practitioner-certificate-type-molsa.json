@@ -1,0 +1,26 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "PractitionerCertificateTypeMoLSA",
+  "id": "practitioner-certificate-type-molsa",
+  "title": "MoLSA Certificate Types",
+  "description": "A list of codes for certificate types according to Israeli MoLSA",
+  "url": "http://fhir.health.gov.il/cs/practitioner-certificate-type-molsa",
+  "concept": [
+    {
+      "code": "SW",
+      "display": "רשיון עבודה סוציאלית"
+    }
+  ],
+  "version": "0.11.0",
+  "caseSensitive": false,
+  "experimental": false,
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/codesystem-effectiveDate",
+      "valueDate": "2023-01"
+    }
+  ],
+  "count": 1
+}

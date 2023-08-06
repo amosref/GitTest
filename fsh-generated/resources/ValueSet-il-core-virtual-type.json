@@ -1,0 +1,52 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreVirtualType",
+  "id": "il-core-virtual-type",
+  "title": "IL Core Virtual encounter Type Codes",
+  "description": "A list of type codes for Virtual Encounters for the IL Core",
+  "url": "http://fhir.health.gov.il/cs/il-core-virtual-type",
+  "version": "0.11.0",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1258986006",
+            "display": "Face-to-face encounter (procedure)"
+          },
+          {
+            "code": "185317003",
+            "display": "Telephone encounter (procedure)"
+          },
+          {
+            "code": "308720009",
+            "display": "Letter encounter (procedure)"
+          },
+          {
+            "code": "453131000124105",
+            "display": "Videotelephony encounter (procedure)"
+          },
+          {
+            "code": "445450000",
+            "display": "Encounter by short message service text messaging (procedure)"
+          },
+          {
+            "code": "1197766005",
+            "display": "Encounter by electronic text-based asynchronous communication (procedure)"
+          },
+          {
+            "code": "1479971000168100",
+            "display": "Email encounter (procedure)"
+          },
+          {
+            "code": "185320006",
+            "display": "Encounter by computer link (procedure)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "YarpaMedicationCode",
+  "id": "yarpa-medication-code",
+  "title": "Yarpa Medication Codes",
+  "description": "Codes for medications according to 'Yarpa' catalogue",
+  "url": "http://yarpa.co.il/catalog",
+  "version": "0.11.0",
+  "caseSensitive": false,
+  "experimental": false
+}

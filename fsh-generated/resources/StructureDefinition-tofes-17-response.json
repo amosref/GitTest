@@ -1,0 +1,179 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "tofes-17-response",
+  "url": "http://fhir.health.gov.il/StructureDefinition/tofes-17-response",
+  "version": "0.1.0",
+  "name": "Tofes17Response",
+  "title": "Tofes 17 Response Profile",
+  "status": "active",
+  "date": "2023-07-06",
+  "publisher": "Outburn LTD.",
+  "description": "Outburn Tofes 17 Response Profile on CoverageEligibilityResponse",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "cdanetv4",
+      "uri": "http://www.cda-adc.ca/en/services/cdanet/",
+      "name": "Canadian Dental Association eclaims standard"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "CoverageEligibilityResponse",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CoverageEligibilityResponse",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CoverageEligibilityResponse",
+        "path": "CoverageEligibilityResponse",
+        "short": "Tofes 17 Response Profile",
+        "definition": "Definitions for the Outburn Tofes 17 Response Profile on CoverageEligibilityResponse."
+      },
+      {
+        "id": "CoverageEligibilityResponse.identifier",
+        "path": "CoverageEligibilityResponse.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CoverageEligibilityResponse.identifier:UUID",
+        "path": "CoverageEligibilityResponse.identifier",
+        "sliceName": "UUID",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CoverageEligibilityResponse.identifier:UUID.system",
+        "path": "CoverageEligibilityResponse.identifier.system",
+        "min": 1,
+        "patternUri": "urn:ietf:rfc:3986"
+      },
+      {
+        "id": "CoverageEligibilityResponse.purpose",
+        "path": "CoverageEligibilityResponse.purpose",
+        "fixedCode": "validation"
+      },
+      {
+        "id": "CoverageEligibilityResponse.patient.identifier",
+        "path": "CoverageEligibilityResponse.patient.identifier",
+        "min": 1
+      },
+      {
+        "id": "CoverageEligibilityResponse.patient.identifier.system",
+        "path": "CoverageEligibilityResponse.patient.identifier.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/identifier/il-national-id"
+      },
+      {
+        "id": "CoverageEligibilityResponse.requestor",
+        "path": "CoverageEligibilityResponse.requestor",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CoverageEligibilityResponse.requestor.identifier",
+        "path": "CoverageEligibilityResponse.requestor.identifier",
+        "min": 1
+      },
+      {
+        "id": "CoverageEligibilityResponse.requestor.identifier.system",
+        "path": "CoverageEligibilityResponse.requestor.identifier.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/identifier/legal-entity"
+      },
+      {
+        "id": "CoverageEligibilityResponse.insurer.identifier",
+        "path": "CoverageEligibilityResponse.insurer.identifier",
+        "min": 1
+      },
+      {
+        "id": "CoverageEligibilityResponse.insurer.identifier.system",
+        "path": "CoverageEligibilityResponse.insurer.identifier.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/identifier/legal-entity"
+      },
+      {
+        "id": "CoverageEligibilityResponse.insurance.item.productOrService.coding",
+        "path": "CoverageEligibilityResponse.insurance.item.productOrService.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "CoverageEligibilityResponse.insurance.item.productOrService.coding:MohCode",
+        "path": "CoverageEligibilityResponse.insurance.item.productOrService.coding",
+        "sliceName": "MohCode",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CoverageEligibilityResponse.insurance.item.productOrService.coding:MohCode.system",
+        "path": "CoverageEligibilityResponse.insurance.item.productOrService.coding.system",
+        "min": 1,
+        "patternUri": "http://fhir.health.gov.il/cs/medical-service-moh"
+      },
+      {
+        "id": "CoverageEligibilityResponse.insurance.item.provider",
+        "path": "CoverageEligibilityResponse.insurance.item.provider",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CoverageEligibilityResponse.insurance.item.provider.identifier",
+        "path": "CoverageEligibilityResponse.insurance.item.provider.identifier",
+        "min": 1
+      },
+      {
+        "id": "CoverageEligibilityResponse.insurance.item.provider.identifier.system",
+        "path": "CoverageEligibilityResponse.insurance.item.provider.identifier.system",
+        "min": 1,
+        "patternUri": "http://practitioners.health.gov.il/Practitioners"
+      }
+    ]
+  }
+}

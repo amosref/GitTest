@@ -1,0 +1,123 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "tofes-17-obligation",
+  "url": "http://fhir.health.gov.il/StructureDefinition/tofes-17-obligation",
+  "version": "0.1.0",
+  "name": "Tofes17Obligation",
+  "title": "Tofes 17 Obligation Profile",
+  "status": "active",
+  "date": "2023-07-06",
+  "publisher": "Outburn LTD.",
+  "description": "Outburn Tofes 17 Obligation Profile on Coverage",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "cdanetv4",
+      "uri": "http://www.cda-adc.ca/en/services/cdanet/",
+      "name": "Canadian Dental Association eclaims standard"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "cpha3pharm",
+      "uri": "http://www.pharmacists.ca/",
+      "name": "Canadian Pharmacy Associaiton eclaims standard"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Coverage",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Coverage",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coverage",
+        "path": "Coverage",
+        "short": "Tofes 17 Obligation Profile",
+        "definition": "Definitions for the Outburn Tofes 17 Obligation Profile on Coverage."
+      },
+      {
+        "id": "Coverage.status",
+        "path": "Coverage.status",
+        "fixedCode": "active"
+      },
+      {
+        "id": "Coverage.beneficiary.identifier",
+        "path": "Coverage.beneficiary.identifier",
+        "min": 1
+      },
+      {
+        "id": "Coverage.beneficiary.identifier.system",
+        "path": "Coverage.beneficiary.identifier.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/identifier/il-national-id"
+      },
+      {
+        "id": "Coverage.payor.identifier",
+        "path": "Coverage.payor.identifier",
+        "min": 1
+      },
+      {
+        "id": "Coverage.payor.identifier.system",
+        "path": "Coverage.payor.identifier.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/identifier/legal-entity"
+      },
+      {
+        "id": "Coverage.costToBeneficiary",
+        "path": "Coverage.costToBeneficiary",
+        "min": 1
+      },
+      {
+        "id": "Coverage.costToBeneficiary.value[x]",
+        "path": "Coverage.costToBeneficiary.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Coverage.costToBeneficiary.value[x]:valueMoney",
+        "path": "Coverage.costToBeneficiary.value[x]",
+        "sliceName": "valueMoney",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Money"
+          }
+        ]
+      },
+      {
+        "id": "Coverage.costToBeneficiary.value[x]:valueMoney.currency",
+        "path": "Coverage.costToBeneficiary.value[x].currency",
+        "fixedCode": "ILS"
+      }
+    ]
+  }
+}

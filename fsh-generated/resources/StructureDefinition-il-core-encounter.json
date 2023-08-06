@@ -1,0 +1,389 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-encounter",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-encounter",
+  "version": "0.11.0",
+  "name": "ILCoreEncounter",
+  "title": "ILCore Encounter Profile",
+  "status": "draft",
+  "date": "2021-05-02",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the Encounter Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Encounter",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Encounter",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Encounter",
+        "path": "Encounter",
+        "short": "ILCore Encounter Profile",
+        "definition": "Definitions for the profile-Encounter resource profile."
+      },
+      {
+        "id": "Encounter.identifier",
+        "path": "Encounter.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.status",
+        "path": "Encounter.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.class",
+        "path": "Encounter.class",
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/cs/il-core-encounter-class"
+        }
+      },
+      {
+        "id": "Encounter.classHistory.class",
+        "path": "Encounter.classHistory.class",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/cs/il-core-encounter-class"
+        }
+      },
+      {
+        "id": "Encounter.type",
+        "path": "Encounter.type",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "@this"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Encounter.type:virtual-encounters",
+        "path": "Encounter.type",
+        "sliceName": "virtual-encounters",
+        "min": 0,
+        "max": "*",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-doctor-to-doctor"
+        }
+      },
+      {
+        "id": "Encounter.type:doctor-to-doctor-consultation",
+        "path": "Encounter.type",
+        "sliceName": "doctor-to-doctor-consultation",
+        "min": 0,
+        "max": "*",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/cs/il-core-virtual-type"
+        }
+      },
+      {
+        "id": "Encounter.serviceType",
+        "path": "Encounter.serviceType",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-service-type"
+        }
+      },
+      {
+        "id": "Encounter.subject",
+        "path": "Encounter.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-group"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.basedOn",
+        "path": "Encounter.basedOn",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-service-request"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.participant",
+        "path": "Encounter.participant",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Encounter.participant.individual",
+        "path": "Encounter.participant.individual",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.participant:primary-performer",
+        "path": "Encounter.participant",
+        "sliceName": "primary-performer",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Encounter.participant:primary-performer.type",
+        "path": "Encounter.participant.type",
+        "min": 1,
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "code": "PPRF",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.participant:primary-performer.period",
+        "path": "Encounter.participant.period",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.participant:primary-performer.individual",
+        "path": "Encounter.participant.individual",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.period",
+        "path": "Encounter.period",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.reasonCode",
+        "path": "Encounter.reasonCode",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Encounter.reasonCode:moh-reason-code",
+        "path": "Encounter.reasonCode",
+        "sliceName": "moh-reason-code",
+        "min": 0,
+        "max": "*",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/moh-reason-codes"
+        }
+      },
+      {
+        "id": "Encounter.reasonReference",
+        "path": "Encounter.reasonReference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-condition",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-procedure",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-observation",
+              "http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.diagnosis.condition",
+        "path": "Encounter.diagnosis.condition",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-condition",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-procedure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.hospitalization.extension",
+        "path": "Encounter.hospitalization.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Encounter.hospitalization.extension:movement-number",
+        "path": "Encounter.hospitalization.extension",
+        "sliceName": "movement-number",
+        "short": "Ext: Movement Sequence-Number",
+        "definition": "Extension: Movement Sequence-Number",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-movement-number"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.hospitalization.origin",
+        "path": "Encounter.hospitalization.origin",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-location",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.hospitalization.admitSource",
+        "path": "Encounter.hospitalization.admitSource",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/moh-admit-source"
+        }
+      },
+      {
+        "id": "Encounter.hospitalization.destination",
+        "path": "Encounter.hospitalization.destination",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-location",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.hospitalization.dischargeDisposition",
+        "path": "Encounter.hospitalization.dischargeDisposition",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/moh-discharge-disposition"
+        }
+      },
+      {
+        "id": "Encounter.location.location",
+        "path": "Encounter.location.location",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-location"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceProvider",
+        "path": "Encounter.serviceProvider",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.partOf",
+        "path": "Encounter.partOf",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-encounter"
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

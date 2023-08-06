@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreMedicationStatementCode",
+  "id": "il-core-medication-statement-code",
+  "title": "ILCore Medication statement Code",
+  "description": "Codes for Medication statement Code",
+  "url": "http://fhir.health.gov.il/ValueSet/il-core-medication-statement-code",
+  "version": "0.11.0",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "valueSet": [
+          "http://fhir.health.gov.il/ValueSet/il-core-medication-code"
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "787481004",
+            "display": "No known Medication"
+          }
+        ]
+      }
+    ]
+  }
+}

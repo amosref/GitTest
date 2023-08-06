@@ -1,0 +1,314 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-medication-administration",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-medication-administration",
+  "version": "0.11.0",
+  "name": "ILCoreMedicationAdministration",
+  "title": "ILCore MedicationAdministration Profile",
+  "status": "draft",
+  "date": "2023-05-18",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the MedicationAdministration Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "w3c.prov",
+      "uri": "http://www.w3.org/ns/prov",
+      "name": "W3C PROV"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationAdministration",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationAdministration",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationAdministration",
+        "path": "MedicationAdministration",
+        "short": "ILCore MedicationAdministration Profile",
+        "definition": "Definitions for the profile-MedicationAdministration resource profile."
+      },
+      {
+        "id": "MedicationAdministration.extension",
+        "path": "MedicationAdministration.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationAdministration.extension:narcotic",
+        "path": "MedicationAdministration.extension",
+        "sliceName": "narcotic",
+        "short": "Ext: Narcotic Medication",
+        "definition": "Extension: Noting if a medication is narcotic or not",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-narcotic-medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.extension:recorded",
+        "path": "MedicationAdministration.extension",
+        "sliceName": "recorded",
+        "short": "Ext: Recorded Time",
+        "definition": "Extension: The time in whitch an event was recorded",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-recorded-time"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.partOf",
+        "path": "MedicationAdministration.partOf",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-medication-administration",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-procedure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.status",
+        "path": "MedicationAdministration.status",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.category",
+        "path": "MedicationAdministration.category",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-medication-administration-category"
+        }
+      },
+      {
+        "id": "MedicationAdministration.medication[x]",
+        "path": "MedicationAdministration.medication[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-medication-statement-code"
+        }
+      },
+      {
+        "id": "MedicationAdministration.medication[x]:medicationReference",
+        "path": "MedicationAdministration.medication[x]",
+        "sliceName": "medicationReference",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.subject",
+        "path": "MedicationAdministration.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-group"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.context",
+        "path": "MedicationAdministration.context",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-encounter",
+              "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.effective[x]",
+        "path": "MedicationAdministration.effective[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.performer.actor",
+        "path": "MedicationAdministration.performer.actor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.reasonReference",
+        "path": "MedicationAdministration.reasonReference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-condition",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-observation",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-diagnostic-report"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.request",
+        "path": "MedicationAdministration.request",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-medication-request"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.device",
+        "path": "MedicationAdministration.device",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.dosage.text",
+        "path": "MedicationAdministration.dosage.text",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.dosage.site",
+        "path": "MedicationAdministration.dosage.site",
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "MedicationAdministrationSite"
+            }
+          ],
+          "strength": "extensible",
+          "description": "A coded concept describing the site location the medicine enters into or onto the body.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/approach-site-codes"
+        }
+      },
+      {
+        "id": "MedicationAdministration.dosage.route",
+        "path": "MedicationAdministration.dosage.route",
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "RouteOfAdministration"
+            }
+          ],
+          "strength": "extensible",
+          "description": "A coded concept describing the route or physiological path of administration of a therapeutic agent into or onto the body of a subject.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/route-codes"
+        }
+      },
+      {
+        "id": "MedicationAdministration.dosage.method",
+        "path": "MedicationAdministration.dosage.method",
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "MedicationAdministrationMethod"
+            }
+          ],
+          "strength": "extensible",
+          "description": "A coded concept describing the technique by which the medicine is administered.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/administration-method-codes"
+        }
+      },
+      {
+        "id": "MedicationAdministration.dosage.dose",
+        "path": "MedicationAdministration.dosage.dose",
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-common-units-of-measure",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet",
+              "valueCanonical": "http://fhir.health.gov.il/ValueSet/il-core-units-of-measure"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
