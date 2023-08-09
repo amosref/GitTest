@@ -221,7 +221,7 @@
             "key": "il-obs-not-performed",
             "severity": "error",
             "human": "dataAbsentReason - if an IL-Core 'not-performed-reason' code is supplied, 'not performed' code MUST be supplied as well",
-            "expression": "coding.where(system='http://fhir.health.gov.il/cs/il-core-not-performed-reason').exists() implies coding.where(system='http://terminology.hl7.org/CodeSystem/data-absent-reason' and code='not-preformed').exists()",
+            "expression": "coding.where(system='http://fhir.health.gov.il/cs/il-core-not-performed-reason').exists() implies coding.where(system='http://terminology.hl7.org/CodeSystem/data-absent-reason' and code='not-performed').exists()",
             "source": "http://fhir.health.gov.il/StructureDefinition/il-core-observation"
           }
         ]

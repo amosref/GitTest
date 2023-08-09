@@ -16,8 +16,8 @@
     {
       "coding": [
         {
-          "system": "http://fhir.health.gov.il/cs/il-core-medicationrequest-category",
           "code": "community-hmo",
+          "system": "http://fhir.health.gov.il/cs/il-core-medicationrequest-category",
           "display": "Community Care/HMO"
         }
       ]
@@ -103,7 +103,6 @@
           "doseQuantity": {
             "value": 10,
             "unit": "drop",
-            "code": "[drp]",
             "system": "http://unitsofmeasure.org"
           },
           "rateRatio": {

@@ -1,0 +1,18 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "PatientRealeaseTypeMoH",
+  "id": "patient-release-type-moh",
+  "title": "Patient Realease Type MoH",
+  "description": "Moh Codes for Patient Realease Type",
+  "url": "http://fhir.health.gov.il/ValueSet/patient-release-type-moh",
+  "version": "0.11.0",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://fhir.health.gov.il/cs/patient-release-type-moh"
+      }
+    ]
+  }
+}

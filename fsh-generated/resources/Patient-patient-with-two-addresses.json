@@ -37,6 +37,43 @@
   ],
   "address": [
     {
+      "line": [
+        "פרג 7'",
+        "כניסה ב'",
+        "דירה 3'",
+        null
+      ],
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "פרג"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "7"
+            }
+          ]
+        },
+        null,
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID",
+              "valueString": "3"
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox",
+              "valueString": "1446"
+            }
+          ]
+        }
+      ],
       "extension": [
         {
           "extension": [
@@ -71,42 +108,6 @@
           }
         ]
       },
-      "line": [
-        "פרג 7'",
-        "כניסה ב'",
-        "דירה 3'"
-      ],
-      "_line": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-              "valueString": "פרג"
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-              "valueString": "7"
-            }
-          ]
-        },
-        null,
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID",
-              "valueString": "3"
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox",
-              "valueString": "1446"
-            }
-          ]
-        }
-      ],
       "postalCode": "6964101",
       "district": "גדרה",
       "country": "IL"

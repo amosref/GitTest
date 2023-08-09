@@ -150,6 +150,35 @@
         "short": "An MoE institute symbol"
       },
       {
+        "id": "Organization.identifier:moh-hospital-department",
+        "path": "Organization.identifier",
+        "sliceName": "moh-hospital-department",
+        "short": "MoE hospital department",
+        "definition": "An institute (hospital) department identifier consisting of five alphanumeric cahracters, a hyphen (\"-\") and five alphanumeric cahracters once again",
+        "min": 0,
+        "max": "1",
+        "mustSupport": false
+      },
+      {
+        "id": "Organization.identifier:moh-hospital-department.system",
+        "path": "Organization.identifier.system",
+        "fixedUri": "http://fhir.health.gov.il/identifier/moh-hospital-department"
+      },
+      {
+        "id": "Organization.identifier:moh-hospital-department.value",
+        "path": "Organization.identifier.value",
+        "short": "An MoE hospital depratment symbol",
+        "constraint": [
+          {
+            "key": "il-organization-hosp-dept",
+            "severity": "error",
+            "human": "Hospital department numner must follow the following structure: five (5) alphanumeric characters, a hyphen (\"-\") and five (5) more alphanumeric characters",
+            "expression": "matches('^[a-zA-Z0-9]{5}-[a-zA-Z0-9]{5}$')",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+          }
+        ]
+      },
+      {
         "id": "Organization.active",
         "path": "Organization.active",
         "mustSupport": true

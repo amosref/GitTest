@@ -32,10 +32,13 @@ Description: "Israel Core proposed constraints and extensions on the MedicationR
 * status 1..1
 * intent 1..1
 * category ^slicing.discriminator.type = #value
-* category ^slicing.discriminator.path = "system"
+* category ^slicing.discriminator.path = "coding.system"
 * category ^slicing.rules = #open
 * category contains il-core 0..*
-* category[il-core] from $vs-il-core-medication-request-category (extensible)
+// * category[il-core] from $vs-il-core-medication-request-category (required)
+* category[il-core].coding.system = $il-core-medication-category
+* category[il-core].coding.system 1..1
+* category[il-core].coding.code 1..1
 * reportedReference only Reference(ILCorePatient or ILCorePractitioner or ILCorePractitionerRole or ILCoreRelatedPerson or ILCoreOrganization)
 * medication[x] 1..1
 * medication[x] from $vs-il-core-medication-code (extensible)

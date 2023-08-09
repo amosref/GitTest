@@ -31,4 +31,4 @@ Usage: #example
 * qualification[=].identifier[0].value = "123445"
 * qualification[=].code = $pract-certificate-type-moh#5 "תעודת מומחה"
 * qualification[=].extension[0].url = $ext-qualification-practice
-* qualification[=].extension[0].valueCodeableConcept = $practitioner-expertise#21 "הרדמה"
+* qualification[=].extension[0].valueCodeableConcept = $practitioner-expertise-moh#21 "הרדמה"

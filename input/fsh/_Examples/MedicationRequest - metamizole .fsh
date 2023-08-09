@@ -8,9 +8,7 @@ Description: "MedicationRequest for Metamizole sodium, for a case of Gangrenous 
 * text.status = #generated
 * status = #completed
 * intent = #order
-* category[il-core].coding[0].system = $il-core-medication-category
-* category[il-core].coding[0].code = #community-hmo
-* category[il-core].coding[0].display = "Community Care/HMO"
+* category[0].coding[0] = $il-core-medication-category#community-hmo "Community Care/HMO"
 * medicationCodeableConcept.coding[0] = $sct#22165008 "Metamizole sodium (substance)"
 * subject.reference = "Patient/1"
 * subject.type = "Patient"
@@ -33,7 +31,7 @@ Description: "MedicationRequest for Metamizole sodium, for a case of Gangrenous 
 * dosageInstruction.method.coding[0] = $sct#738995006 "Swallow (administration method)"
 * dosageInstruction.doseAndRate.doseQuantity.value = 10
 * dosageInstruction.doseAndRate.doseQuantity.unit = "drop"
-* dosageInstruction.doseAndRate.doseQuantity.code = #[drp]
+// * dosageInstruction.doseAndRate.doseQuantity.code = #[drp]
 * dosageInstruction.doseAndRate.doseQuantity.system = $ucum
 * dosageInstruction.doseAndRate.rateRatio.numerator.value = 10
 * dosageInstruction.doseAndRate.rateRatio.numerator.unit = "drop"

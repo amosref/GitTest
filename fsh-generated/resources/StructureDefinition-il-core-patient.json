@@ -342,7 +342,7 @@
             "key": "il-patient-name",
             "severity": "error",
             "human": "Either Patient.name.given and/or Patient.name.family SHALL be present or a Data Absent Reason Extension SHALL be present.",
-            "expression": "(family.exists() or given.exists()) xor extension.where(url='http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists()",
+            "expression": "(family.exists() or given.exists()) xor name.extension.where(url='http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists()",
             "source": "http://fhir.health.gov.il/StructureDefinition/il-core-patient"
           }
         ],

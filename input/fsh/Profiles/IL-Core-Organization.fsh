@@ -25,7 +25,8 @@ Description: "Israel Core proposed constraints and extensions on the Organizatio
 * identifier contains
    moh-inst-symbol 0..1 and
    legal-entity 0..1 and
-   moe-inst 0..1
+   moe-inst 0..1 and
+   moh-hospital-department 0..1
 
 * identifier[moh-inst-symbol].system 1..1 MS
 * identifier[moh-inst-symbol].value 1..1 MS
@@ -51,6 +52,15 @@ Description: "Israel Core proposed constraints and extensions on the Organizatio
 * identifier[moe-inst] ^mustSupport = false
 * identifier[moe-inst].system = $moe-inst (exactly)
 * identifier[moe-inst].value ^short = "An MoE institute symbol"
+
+* identifier[moh-hospital-department].system 1..1 MS
+* identifier[moh-hospital-department].value obeys il-organization-hosp-dept
+* identifier[moh-hospital-department].value 1..1 MS
+* identifier[moh-hospital-department] ^short = "MoE hospital department"
+* identifier[moh-hospital-department] ^definition = "An institute (hospital) department identifier consisting of five alphanumeric cahracters, a hyphen (\"-\") and five alphanumeric cahracters once again"
+* identifier[moh-hospital-department] ^mustSupport = false
+* identifier[moh-hospital-department].system = $moh-hosp-department (exactly)
+* identifier[moh-hospital-department].value ^short = "An MoE hospital depratment symbol"
 
 //active
 * active 0..1 MS

@@ -65,6 +65,12 @@ Description: "If not sub-organization (i.e - partOf), there SHALL be an identifi
 Expression: "partOf.empty() implies identifier.exists()"
 Severity: #error
 
+Invariant: il-organization-hosp-dept
+Description: "Hospital department numner must follow the following structure: five (5) alphanumeric characters, a hyphen (\"-\") and five (5) more alphanumeric characters"
+Expression: "matches('^[a-zA-Z0-9]{5}-[a-zA-Z0-9]{5}$')"
+Severity: #error
+
+
 // Invariant: il-patient-name
 // Description: "Either Patient.name.given and/or Patient.name.family SHALL be present or a Data Absent Reason Extension SHALL be present."
 // Expression: "(name.family.exists() or name.given.exists()) xor extension.where(url='http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists()"
@@ -72,7 +78,7 @@ Severity: #error
 
 Invariant: il-patient-name
 Description: "Either Patient.name.given and/or Patient.name.family SHALL be present or a Data Absent Reason Extension SHALL be present."
-Expression: "(family.exists() or given.exists()) xor extension.where(url='http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists()"
+Expression: "(family.exists() or given.exists()) xor name.extension.where(url='http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists()"
 Severity: #error
 
 Invariant: identifier-dash
@@ -97,7 +103,7 @@ Severity: #warning
 
 Invariant: il-obs-not-performed
 Description: "dataAbsentReason - if an IL-Core 'not-performed-reason' code is supplied, 'not performed' code MUST be supplied as well"
-Expression: "coding.where(system='http://fhir.health.gov.il/cs/il-core-not-performed-reason').exists() implies coding.where(system='http://terminology.hl7.org/CodeSystem/data-absent-reason' and code='not-preformed').exists()"
+Expression: "coding.where(system='http://fhir.health.gov.il/cs/il-core-not-performed-reason').exists() implies coding.where(system='http://terminology.hl7.org/CodeSystem/data-absent-reason' and code='not-performed').exists()"
 Severity: #error
 
 Invariant: il-obs-lab-value

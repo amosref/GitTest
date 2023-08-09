@@ -38,29 +38,6 @@
   ],
   "address": [
     {
-      "extension": [
-        {
-          "extension": [
-            {
-              "url": "longitude",
-              "valueDecimal": 182468.59
-            },
-            {
-              "url": "latitude",
-              "valueDecimal": 670131.38
-            }
-          ],
-          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
-        },
-        {
-          "url": "http://fhir.health.gov.il/StructureDefinition/ext-statistical-area",
-          "valueIdentifier": {
-            "system": "http://fhir.health.gov.il/identifier/cbs-statistical-area",
-            "value": "40000733"
-          }
-        }
-      ],
-      "text": "חניתה 20 חיפה",
       "line": [
         "חניתה 20"
       ],
@@ -86,6 +63,29 @@
           ]
         }
       ],
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "longitude",
+              "valueDecimal": 182468.59
+            },
+            {
+              "url": "latitude",
+              "valueDecimal": 670131.38
+            }
+          ],
+          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+        },
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-statistical-area",
+          "valueIdentifier": {
+            "system": "http://fhir.health.gov.il/identifier/cbs-statistical-area",
+            "value": "40000733"
+          }
+        }
+      ],
+      "text": "חניתה 20 חיפה",
       "city": "חיפה",
       "_city": {
         "extension": [

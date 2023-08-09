@@ -46,6 +46,7 @@ Alias: $pna-id =                        http://fhir.health.gov.il/identifier/pna
 Alias: $id-type =                       http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $legal-entity =                  http://fhir.health.gov.il/identifier/legal-entity
 Alias: $moh-inst-symbol =               http://institutions.health.gov.il/Institutions
+Alias: $moh-hosp-department =           http://fhir.health.gov.il/identifier/moh-hospital-department
 Alias: $enc =                           http://fhir.health.gov.il/identifier/encrypted-id-primary-moh
 Alias: $moe-inst =                      http://fhir.health.gov.il/identifier/moe-institute-symbol
 Alias: $practitioner-license-moh =      http://practitioners.health.gov.il/Practitioners
@@ -118,11 +119,14 @@ Alias: $il-core-medication-category =   http://fhir.health.gov.il/cs/il-core-med
 Alias: $il-core-medication-course-of-therapy-type = http://fhir.health.gov.il/cs/il-core-medication-course-of-therapy-type
 Alias: $not-performed-reason =          http://fhir.health.gov.il/cs/il-core-not-performed-reason
 Alias: $il-core-encounter-type =        http://fhir.health.gov.il/cs/il-core-encounter-type
+Alias: $patient-visit-reason-moh =      http://fhir.health.gov.il/cs/patient-visit-reason-moh
+Alias: $patient-admit-source-moh =      http://fhir.health.gov.il/cs/patient-admit-source-moh
+Alias: $patient-release-type-moh =      http://fhir.health.gov.il/cs/patient-release-type-moh
 // Alias: $urn =                           http://fhir.health.gov.il/cs/il-core-urn
-Alias: $urn =                           urn:ietf:rfc:3986
 
 // Codesystems - external
 // Alias: $medical-service-code =       http://www.ama-assn.org/go/cpt
+Alias: $urn =                           urn:ietf:rfc:3986
 Alias: $loinc =                         http://loinc.org
 Alias: $sct =                           http://snomed.info/sct
 Alias: $dar =                           http://terminology.hl7.org/CodeSystem/data-absent-reason
@@ -143,8 +147,8 @@ Alias: $atc =                           http://www.whocc.no/atc
 Alias: $ucum =                          http://unitsofmeasure.org
 Alias: $yarpa-medication-code =         http://yarpa.co.il/catalog
 Alias: $moh-medication-code =           http://israeldrugs.health.gov.il
-Alias: $moh-admit-source =              http://fhir.health.gov.il/ValueSet/moh-admit-source
-Alias: $moh-reason-codes =              http://fhir.health.gov.il/ValueSet/moh-reason-codes
+// Alias: $moh-admit-source =              http://fhir.health.gov.il/ValueSet/moh-admit-source
+// Alias: $moh-reason-codes =              http://fhir.health.gov.il/ValueSet/moh-reason-codes
 Alias: $country-codes  =                urn:iso:std:iso:3166
 // Alias: $urn =                           urn:ietf:rfc:3986  // created a new CS in IL-CORE section
 
@@ -218,6 +222,10 @@ Alias: $vs-moh-discharge-disposition =  http://fhir.health.gov.il/ValueSet/moh-d
 Alias: $vs-moh-reason-codes =           http://fhir.health.gov.il/ValueSet/moh-reason-codes
 Alias: $vs-yarpa-medication-code =      http://fhir.health.gov.il/ValueSet/yarpa-medication-code
 Alias: $vs-not-performed-reason =       http://fhir.health.gov.il/ValueSet/il-core-not-performed-reason
+Alias: $vs-patient-visit-reason-moh =   http://fhir.health.gov.il/ValueSet/patient-visit-reason-moh
+Alias: $vs-patient-admit-source-moh =   http://fhir.health.gov.il/ValueSet/patient-admit-source-moh
+Alias: $vs-patient-release-type-moh =   http://fhir.health.gov.il/ValueSet/patient-release-type-moh
+
 
 // ValueSets - external
 Alias: $bodySite =                      http://hl7.org/fhir/ValueSet/body-site

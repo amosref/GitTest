@@ -103,7 +103,7 @@
             "coding": [
               {
                 "code": "21",
-                "system": "http://fhir.health.gov.il/identifier/practitioner-expertise",
+                "system": "http://fhir.health.gov.il/cs/practitioner-expertise-moh",
                 "display": "הרדמה"
               }
             ]

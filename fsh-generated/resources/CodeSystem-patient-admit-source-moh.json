@@ -1,0 +1,242 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "example",
+  "name": "PatientAdmitSourceMoH",
+  "id": "patient-admit-source-moh",
+  "title": "Patient Admit Source MoH",
+  "description": "Moh Codes for Patient Admit Source",
+  "url": "http://fhir.health.gov.il/cs/patient-admit-source-moh",
+  "concept": [
+    {
+      "code": "1",
+      "display": "מוסד רפ' אחר"
+    },
+    {
+      "code": "2",
+      "display": "מוסד לא רפואי"
+    },
+    {
+      "code": "5",
+      "display": "אשפוז יום"
+    },
+    {
+      "code": "6",
+      "display": "מח' אשפוז בבי\"ח"
+    },
+    {
+      "code": "7",
+      "display": "ממיון בבי\"ח"
+    },
+    {
+      "code": "8",
+      "display": "ממרפאה בבי\"ח"
+    },
+    {
+      "code": "10",
+      "display": "כללית"
+    },
+    {
+      "code": "11",
+      "display": "מכבי"
+    },
+    {
+      "code": "12",
+      "display": "מאוחדת"
+    },
+    {
+      "code": "13",
+      "display": "לאומית"
+    },
+    {
+      "code": "15",
+      "display": "שר\"פ / מלר\"ם"
+    },
+    {
+      "code": "16",
+      "display": "ביטוח לאומי"
+    },
+    {
+      "code": "17",
+      "display": "לידה"
+    },
+    {
+      "code": "18",
+      "display": "ביקור רדיולוגיה"
+    },
+    {
+      "code": "19",
+      "display": "ביק. חוזר במיון"
+    },
+    {
+      "code": "20",
+      "display": "מרופא פרטי"
+    },
+    {
+      "code": "21",
+      "display": "מרפאת מהגרים"
+    },
+    {
+      "code": "22",
+      "display": "מדא מרשות ציבור"
+    },
+    {
+      "code": "23",
+      "display": "אמבולנס נתב''ג"
+    },
+    {
+      "code": "24",
+      "display": "רופא בית חולים"
+    },
+    {
+      "code": "30",
+      "display": "מד\"א"
+    },
+    {
+      "code": "31",
+      "display": "שח\"ל"
+    },
+    {
+      "code": "32",
+      "display": "נט\"ן"
+    },
+    {
+      "code": "33",
+      "display": "נ.ט.ל.י"
+    },
+    {
+      "code": "34",
+      "display": "טרם"
+    },
+    {
+      "code": "35",
+      "display": "לשכת בריאות"
+    },
+    {
+      "code": "36",
+      "display": "אמבולנס"
+    },
+    {
+      "code": "38",
+      "display": "פסיכיאטר מחוזי"
+    },
+    {
+      "code": "39",
+      "display": "ביקור רופא"
+    },
+    {
+      "code": "40",
+      "display": "צה\"ל"
+    },
+    {
+      "code": "41",
+      "display": "משטרה"
+    },
+    {
+      "code": "42",
+      "display": "צה\"ל-מזור"
+    },
+    {
+      "code": "45",
+      "display": "שרות בתי הסוהר"
+    },
+    {
+      "code": "46",
+      "display": "משרד הביטחון"
+    },
+    {
+      "code": "47",
+      "display": "רשות פלסטינאית"
+    },
+    {
+      "code": "48",
+      "display": "מאוחדת חיילים"
+    },
+    {
+      "code": "49",
+      "display": "לאומית חיילים"
+    },
+    {
+      "code": "50",
+      "display": "פניה עצמית"
+    },
+    {
+      "code": "51",
+      "display": "מעסיק/ת.עבודה"
+    },
+    {
+      "code": "52",
+      "display": "הפניה טלפונית"
+    },
+    {
+      "code": "53",
+      "display": "כללית חיילים"
+    },
+    {
+      "code": "54",
+      "display": "מכבי חיילים"
+    },
+    {
+      "code": "55",
+      "display": "כללית מכביה"
+    },
+    {
+      "code": "56",
+      "display": "ביקור רופא צה\"ל"
+    },
+    {
+      "code": "57",
+      "display": "מוקד רפואי ק\"ש"
+    },
+    {
+      "code": "60",
+      "display": "אחות בית ספר"
+    },
+    {
+      "code": "61",
+      "display": "תחנה לבריאות המ"
+    },
+    {
+      "code": "62",
+      "display": "שרותי רווחה"
+    },
+    {
+      "code": "74",
+      "display": "איחוד הצלה"
+    },
+    {
+      "code": "85",
+      "display": "קבלת אחסון גויה"
+    },
+    {
+      "code": "98",
+      "display": "מסוק"
+    },
+    {
+      "code": "99",
+      "display": "לא ידוע"
+    },
+    {
+      "code": "Z1",
+      "display": "הסבה-המשך טיפול"
+    },
+    {
+      "code": "Z2",
+      "display": "הסבה-מקופ\"ח"
+    },
+    {
+      "code": "Z4",
+      "display": "הסבה-פניה טלפון"
+    }
+  ],
+  "valueSet": "http://fhir.health.gov.il/ValueSet/patient-admit-source-moh",
+  "version": "0.11.0",
+  "caseSensitive": false,
+  "experimental": false,
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/codesystem-effectiveDate",
+      "valueDate": "2023-08"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "example",
+  "name": "PatientRealeaseTypeMoH",
+  "id": "patient-release-type-moh",
+  "title": "Patient Realease Type MoH",
+  "description": "Moh Codes for Patient Realease Type",
+  "url": "http://fhir.health.gov.il/cs/patient-release-type-moh",
+  "concept": [
+    {
+      "code": "-999",
+      "display": "לא ידוע"
+    },
+    {
+      "code": "0",
+      "display": "לא רשום"
+    },
+    {
+      "code": "1",
+      "display": "שחרור למוסד אחר"
+    },
+    {
+      "code": "2",
+      "display": "שחרור הביתה"
+    },
+    {
+      "code": "3",
+      "display": "פטירה"
+    },
+    {
+      "code": "4",
+      "display": "ביטול ביקור"
+    },
+    {
+      "code": "5",
+      "display": "ביטול אשפוז"
+    },
+    {
+      "code": "6",
+      "display": "שחרור ממיון לאשפוז"
+    },
+    {
+      "code": "7",
+      "display": "עזב על דעת עצמו"
+    },
+    {
+      "code": "8",
+      "display": "התקבל מת"
+    },
+    {
+      "code": "9",
+      "display": "לא ידוע"
+    },
+    {
+      "code": "10",
+      "display": "עזב עם הגיליון"
+    },
+    {
+      "code": "106",
+      "display": "העברה למחלקה אחרת בבי\"ח הזה"
+    },
+    {
+      "code": "11",
+      "display": "חולה אונקולוגי"
+    },
+    {
+      "code": "14",
+      "display": "הועבר להוסטל"
+    },
+    {
+      "code": "15",
+      "display": "שוחרר לטיפול ביתי"
+    },
+    {
+      "code": "17",
+      "display": "שוחרר למרפאה"
+    },
+    {
+      "code": "18",
+      "display": "ביטול לאחר קבלה ותשלום במיון"
+    },
+    {
+      "code": "60",
+      "display": "אחר"
+    },
+    {
+      "code": "94",
+      "display": "הסבה אחר"
+    },
+    {
+      "code": "95",
+      "display": "הסבה למוסד צבאי"
+    },
+    {
+      "code": "96",
+      "display": "הסבה העברה למחלקה"
+    }
+  ],
+  "valueSet": "http://fhir.health.gov.il/ValueSet/patient-release-type-moh",
+  "version": "0.11.0",
+  "caseSensitive": false,
+  "experimental": false,
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/codesystem-effectiveDate",
+      "valueDate": "2023-08"
+    }
+  ]
+}

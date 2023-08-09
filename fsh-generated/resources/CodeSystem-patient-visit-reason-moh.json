@@ -1,0 +1,350 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "example",
+  "name": "PatientVisitReasonMoH",
+  "id": "patient-visit-reason-moh",
+  "title": "Patient Visit Reason MoH",
+  "description": "Moh Codes for Patient Visit Reason",
+  "url": "http://fhir.health.gov.il/cs/patient-visit-reason-moh",
+  "concept": [
+    {
+      "code": "0",
+      "display": "לא רשום"
+    },
+    {
+      "code": "1",
+      "display": "עם הפניה רפואית"
+    },
+    {
+      "code": "4",
+      "display": "פינוי מד\"א"
+    },
+    {
+      "code": "5",
+      "display": "סיוע לצוות מד\"א"
+    },
+    {
+      "code": "10",
+      "display": "מחלה"
+    },
+    {
+      "code": "11",
+      "display": "חולה אונקולוגי"
+    },
+    {
+      "code": "12",
+      "display": "חולה המופיליה"
+    },
+    {
+      "code": "13",
+      "display": "חולה דיאליזה"
+    },
+    {
+      "code": "14",
+      "display": "חום עד גיל חודשיים"
+    },
+    {
+      "code": "15",
+      "display": "חולה FC (סיסטיק פיברוזיס)"
+    },
+    {
+      "code": "16",
+      "display": "חשד לקורונה"
+    },
+    {
+      "code": "17",
+      "display": "חיובי לקורונה"
+    },
+    {
+      "code": "18",
+      "display": "קורונה מבידוד בית"
+    },
+    {
+      "code": "20",
+      "display": "לידה"
+    },
+    {
+      "code": "21",
+      "display": "ילוד"
+    },
+    {
+      "code": "22",
+      "display": "צירי לידה"
+    },
+    {
+      "code": "30",
+      "display": "תאונת דרכים"
+    },
+    {
+      "code": "31",
+      "display": "תאונת דרכים חוזר"
+    },
+    {
+      "code": "32",
+      "display": "תאונת דרכים-עבודה"
+    },
+    {
+      "code": "33",
+      "display": "תאונת דרכים-עבודה חוזר"
+    },
+    {
+      "code": "34",
+      "display": "חשד לאירוע מוחי"
+    },
+    {
+      "code": "35",
+      "display": "תאונת אופניים חשמליים"
+    },
+    {
+      "code": "36",
+      "display": "תאונת קורקינט חשמלי"
+    },
+    {
+      "code": "40",
+      "display": "תאונת עבודה"
+    },
+    {
+      "code": "41",
+      "display": "תאונת עבודה חוזר"
+    },
+    {
+      "code": "42",
+      "display": "חשיפת עובד בריאות"
+    },
+    {
+      "code": "43",
+      "display": "כשירות למעצר"
+    },
+    {
+      "code": "44",
+      "display": "טיפול בעציר"
+    },
+    {
+      "code": "45",
+      "display": "לקיחת דם לרמת אלכוהול"
+    },
+    {
+      "code": "46",
+      "display": "סיכון תוקפני"
+    },
+    {
+      "code": "47",
+      "display": "חזרה ממוסד רפואי"
+    },
+    {
+      "code": "48",
+      "display": "הוראת בית משפט"
+    },
+    {
+      "code": "49",
+      "display": "טיפול TCE (נזע חשמלי)"
+    },
+    {
+      "code": "50",
+      "display": "פעולת איבה"
+    },
+    {
+      "code": "51",
+      "display": "פעולת איבה חוזר"
+    },
+    {
+      "code": "52",
+      "display": "פיגוע חבלני"
+    },
+    {
+      "code": "53",
+      "display": "פיגוע המוני"
+    },
+    {
+      "code": "54",
+      "display": "פיגוע מלחמה"
+    },
+    {
+      "code": "55",
+      "display": "פיגוע כימי"
+    },
+    {
+      "code": "56",
+      "display": "פיגוע ביולוגי"
+    },
+    {
+      "code": "57",
+      "display": "פיגוע קרינה"
+    },
+    {
+      "code": "58",
+      "display": "הפרות סדר"
+    },
+    {
+      "code": "59",
+      "display": "אסון רב נפגעים"
+    },
+    {
+      "code": "60",
+      "display": "פגיעה מכוונת"
+    },
+    {
+      "code": "61",
+      "display": "אלימות במשפחה"
+    },
+    {
+      "code": "62",
+      "display": "תקיפה מינית"
+    },
+    {
+      "code": "63",
+      "display": "תקיפה, קטטה"
+    },
+    {
+      "code": "64",
+      "display": "ניסיון התאבדות"
+    },
+    {
+      "code": "65",
+      "display": "פצע ירי"
+    },
+    {
+      "code": "66",
+      "display": "דקירת סכין"
+    },
+    {
+      "code": "67",
+      "display": "סיכון אובדני"
+    },
+    {
+      "code": "68",
+      "display": "פגיעה עצמית מכוונת ללא כוונת התאבדות"
+    },
+    {
+      "code": "69",
+      "display": "פגיעה מכוונת אחרת"
+    },
+    {
+      "code": "70",
+      "display": "פגיעה לא מכוונת"
+    },
+    {
+      "code": "71",
+      "display": "הרעלה"
+    },
+    {
+      "code": "72",
+      "display": "כוויה"
+    },
+    {
+      "code": "73",
+      "display": "נפילה, חבלה, חתך"
+    },
+    {
+      "code": "74",
+      "display": "חדירת גוף זר (פרט לעין)"
+    },
+    {
+      "code": "75",
+      "display": "מכת חום, חשמל"
+    },
+    {
+      "code": "76",
+      "display": "טביעה"
+    },
+    {
+      "code": "77",
+      "display": "שריפה"
+    },
+    {
+      "code": "78",
+      "display": "שאיפה"
+    },
+    {
+      "code": "79",
+      "display": "חבלה אחרת"
+    },
+    {
+      "code": "80",
+      "display": "פגיעה אחרת"
+    },
+    {
+      "code": "81",
+      "display": "פגיעת בעלי-חיים"
+    },
+    {
+      "code": "82",
+      "display": "תאונת ספורט"
+    },
+    {
+      "code": "83",
+      "display": "תאונת בית ספר"
+    },
+    {
+      "code": "84",
+      "display": "תאונת גן"
+    },
+    {
+      "code": "85",
+      "display": "גוף זר בעין"
+    },
+    {
+      "code": "86",
+      "display": "שבר, תפירה, פריקה"
+    },
+    {
+      "code": "87",
+      "display": "תאונת אופניים"
+    },
+    {
+      "code": "89",
+      "display": "תאונה אחרת"
+    },
+    {
+      "code": "90",
+      "display": "תלונות נפשיות"
+    },
+    {
+      "code": "91",
+      "display": "קביעת מוות"
+    },
+    {
+      "code": "92",
+      "display": "החמרה קלינית"
+    },
+    {
+      "code": "93",
+      "display": "איזון תרופתי"
+    },
+    {
+      "code": "94",
+      "display": "פסיכוסוציאלי"
+    },
+    {
+      "code": "96",
+      "display": "הסבה"
+    },
+    {
+      "code": "97",
+      "display": "חוות דעת משפטית"
+    },
+    {
+      "code": "98",
+      "display": "התקבל מת"
+    },
+    {
+      "code": "99",
+      "display": "לא ידוע"
+    },
+    {
+      "code": "4A",
+      "display": "תאונת עבודה-דקירה ממחט"
+    }
+  ],
+  "valueSet": "http://fhir.health.gov.il/ValueSet/patient-visit-reason-moh",
+  "version": "0.11.0",
+  "caseSensitive": false,
+  "experimental": false,
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/codesystem-effectiveDate",
+      "valueDate": "2023-08"
+    }
+  ]
+}

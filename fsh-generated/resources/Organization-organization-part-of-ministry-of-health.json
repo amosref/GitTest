@@ -8,9 +8,6 @@
   },
   "address": [
     {
-      "use": "work",
-      "type": "physical",
-      "text": "ירמיהו 39 ירושלים",
       "line": [
         "ירמיהו 39"
       ],
@@ -28,6 +25,9 @@
           ]
         }
       ],
+      "use": "work",
+      "type": "physical",
+      "text": "ירמיהו 39 ירושלים",
       "city": "ירושלים",
       "_city": {
         "extension": [

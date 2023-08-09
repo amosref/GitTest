@@ -1042,14 +1042,6 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/moh-admit-source"
-        },
-        "name": "MoH Admit Source Codes",
-        "description": "Codes for admit source according to MoH catalogue",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "CodeSystem/practitioner-certificate-type-moh"
         },
         "name": "MoH Certificate Types",
@@ -1078,22 +1070,6 @@
         },
         "name": "MoH Medication Codes",
         "description": "Codes for medications according to MoH catalogue",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/moh-reason-codes"
-        },
-        "name": "MoH Reason Codes",
-        "description": "Reason Codes according to MoH catalogue",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/moh-reason-codes"
-        },
-        "name": "MoH Reason Codes",
-        "description": "Reason Codes according to MoH catalogue",
         "exampleBoolean": false
       },
       {
@@ -1143,6 +1119,13 @@
       },
       {
         "reference": {
+          "reference": "Organization/organization-hospital-department"
+        },
+        "name": "organization-hospital-department",
+        "exampleCanonical": "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+      },
+      {
+        "reference": {
           "reference": "Organization/organization-ministry-of-health"
         },
         "name": "organization-ministry-of-health",
@@ -1175,6 +1158,54 @@
         },
         "name": "Passport URIs",
         "description": "A country specific URI for passport numbers",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/patient-admit-source-moh"
+        },
+        "name": "Patient Admit Source MoH",
+        "description": "Moh Codes for Patient Admit Source",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/patient-admit-source-moh"
+        },
+        "name": "Patient Admit Source MoH",
+        "description": "Moh Codes for Patient Admit Source",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/patient-release-type-moh"
+        },
+        "name": "Patient Realease Type MoH",
+        "description": "Moh Codes for Patient Realease Type",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/patient-release-type-moh"
+        },
+        "name": "Patient Realease Type MoH",
+        "description": "Moh Codes for Patient Realease Type",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/patient-visit-reason-moh"
+        },
+        "name": "Patient Visit Reason MoH",
+        "description": "Moh Codes for Patient Visit Reason",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/patient-visit-reason-moh"
+        },
+        "name": "Patient Visit Reason MoH",
+        "description": "Moh Codes for Patient Visit Reason",
         "exampleBoolean": false
       },
       {
@@ -1425,6 +1456,14 @@
         },
         "name": "Vaccine Product Codes",
         "description": "A list of codes for vaccine products from atc, YARPA and cvx codeSystems",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/yarpa-medication-code"
+        },
+        "name": "Yarpa Medication Code",
+        "description": "Codes for medications according to 'Yarpa' catalogue",
         "exampleBoolean": false
       },
       {

@@ -37,31 +37,6 @@
   ],
   "address": [
     {
-      "extension": [
-        {
-          "extension": [
-            {
-              "url": "longitude",
-              "valueDecimal": 182468.59
-            },
-            {
-              "url": "latitude",
-              "valueDecimal": 670131.38
-            }
-          ],
-          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
-        },
-        {
-          "url": "http://fhir.health.gov.il/StructureDefinition/ext-statistical-area",
-          "valueIdentifier": {
-            "system": "http://fhir.health.gov.il/identifier/cbs-statistical-area",
-            "value": "50000935"
-          }
-        }
-      ],
-      "use": "home",
-      "type": "physical",
-      "text": "לח\"י 1 דירה 4 תל אביב",
       "line": [
         "לח\"י 1"
       ],
@@ -91,6 +66,31 @@
           ]
         }
       ],
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "longitude",
+              "valueDecimal": 182468.59
+            },
+            {
+              "url": "latitude",
+              "valueDecimal": 670131.38
+            }
+          ],
+          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+        },
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-statistical-area",
+          "valueIdentifier": {
+            "system": "http://fhir.health.gov.il/identifier/cbs-statistical-area",
+            "value": "50000935"
+          }
+        }
+      ],
+      "use": "home",
+      "type": "physical",
+      "text": "לח\"י 1 דירה 4 תל אביב",
       "city": "תל אביב",
       "_city": {
         "extension": [

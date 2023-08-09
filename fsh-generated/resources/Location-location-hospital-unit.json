@@ -7,18 +7,6 @@
     ]
   },
   "address": {
-    "extension": [
-      {
-        "url": "http://fhir.health.gov.il/StructureDefinition/ext-statistical-area",
-        "valueIdentifier": {
-          "system": "http://fhir.health.gov.il/identifier/cbs-statistical-area",
-          "value": "4000416"
-        }
-      }
-    ],
-    "use": "work",
-    "type": "physical",
-    "text": "העליה השנייה 8 חיפה",
     "line": [
       "העליה השנייה 8"
     ],
@@ -36,6 +24,18 @@
         ]
       }
     ],
+    "extension": [
+      {
+        "url": "http://fhir.health.gov.il/StructureDefinition/ext-statistical-area",
+        "valueIdentifier": {
+          "system": "http://fhir.health.gov.il/identifier/cbs-statistical-area",
+          "value": "4000416"
+        }
+      }
+    ],
+    "use": "work",
+    "type": "physical",
+    "text": "העליה השנייה 8 חיפה",
     "city": "חיפה",
     "_city": {
       "extension": [

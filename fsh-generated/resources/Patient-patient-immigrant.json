@@ -80,24 +80,6 @@
   ],
   "address": [
     {
-      "extension": [
-        {
-          "extension": [
-            {
-              "url": "longitude",
-              "valueDecimal": 34.764885
-            },
-            {
-              "url": "latitude",
-              "valueDecimal": 32.058317
-            }
-          ],
-          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
-        }
-      ],
-      "use": "home",
-      "type": "physical",
-      "text": "אילת 34 תל אביב דירה 2",
       "line": [
         "אילת 34"
       ],
@@ -123,6 +105,24 @@
           ]
         }
       ],
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "longitude",
+              "valueDecimal": 34.764885
+            },
+            {
+              "url": "latitude",
+              "valueDecimal": 32.058317
+            }
+          ],
+          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+        }
+      ],
+      "use": "home",
+      "type": "physical",
+      "text": "אילת 34 תל אביב דירה 2",
       "city": "תל אביב",
       "_city": {
         "extension": [
